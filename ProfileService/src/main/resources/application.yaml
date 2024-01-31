@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:syscode;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+spring-doc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+base:
+  url: http://localhost:8081/api/address/
+security:
+  user:
+    name: "user"
+    password: "password"
